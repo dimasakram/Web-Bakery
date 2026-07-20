@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semua Produk — Purimas 3</title>
+<meta name="description" content="30 pilihan menu Purimas 3: kue basah, bolu, kue ulang tahun, cookies, donat, dan pastry. Cari dan filter menu favoritmu.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">Purimas 3 <small>Toko Kue</small></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="produk.html" class="active">Semua Produk</a>
+      <a href="promo.html">Promo</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="produk.html" class="nav-cta">Pesan Sekarang</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold-pale)">Katalog Lengkap</span>
+    <h1>Semua Produk Purimas 3</h1>
+    <p>30 menu pilihan — dari kue basah tradisional sampai kue ulang tahun custom. Gunakan filter atau pencarian untuk menemukan menu favoritmu.</p>
+  </div>
+</div>
+
+<section style="padding-top:44px;">
+  <div class="container">
+
+    <div class="search-row">
+      <input type="text" class="search-input" id="searchInput" placeholder="Cari nama kue, misalnya: bolu, nastar, donat...">
+    </div>
+
+    <div class="filter-bar" id="filterBar"></div>
+
+    <p class="result-count" id="resultCount"></p>
+
+    <div class="product-grid" id="productGrid"></div>
+
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <h3>Menu tidak ditemukan</h3>
+      <p>Coba kata kunci lain atau reset filter kategori.</p>
+      <button class="btn btn-outline btn-small" onclick="resetFilters()">Reset Filter</button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Purimas 3</div>
+        <p style="font-size:.9rem;opacity:.85;max-width:32ch;">Toko kue rumahan di Sukabumi — menghadirkan kue basah, bolu, dan kue ulang tahun segar setiap hari.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram Purimas 3">IG</a>
+          <a href="#" aria-label="Facebook Purimas 3">FB</a>
+          <a href="#" aria-label="TikTok Purimas 3">TT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="produk.html">Semua Produk</a></li>
+          <li><a href="promo.html">Promo</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="produk.html?kategori=kue-basah">Kue Basah</a></li>
+          <li><a href="produk.html?kategori=bolu">Bolu</a></li>
+          <li><a href="produk.html?kategori=ulang-tahun">Kue Ulang Tahun</a></li>
+          <li><a href="produk.html?kategori=cookies">Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li>Jl. Purimas Raya No. 3, Sukabumi</li>
+          <li>+62 812-3456-7890</li>
+          <li>halo@purimas3.id</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Purimas 3. Semua hak cipta dilindungi.</span>
+      <span>Dibuat dengan cinta di Sukabumi 🍰</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const grid = document.getElementById("productGrid");
+  const filterBar = document.getElementById("filterBar");
+  const searchInput = document.getElementById("searchInput");
+  const resultCount = document.getElementById("resultCount");
+  const emptyState = document.getElementById("emptyState");
+
+  const params = new URLSearchParams(window.location.search);
+  let activeCat = params.get("kategori") || "semua";
+
+  function renderFilters() {
+    const cats = ["semua", ...Object.keys(CATEGORY_META)];
+    filterBar.innerHTML = cats.map(c => {
+      const label = c === "semua" ? "Semua Menu" : CATEGORY_META[c].label;
+      return `<button class="filter-chip ${activeCat === c ? "active" : ""}" data-cat="${c}">${label}</button>`;
+    }).join("");
+    filterBar.querySelectorAll(".filter-chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeCat = btn.dataset.cat;
+        renderFilters();
+        renderProducts();
+      });
+    });
+  }
+
+  function renderProducts() {
+    const query = searchInput.value.trim().toLowerCase();
+    let list = PRODUCTS.filter(p => activeCat === "semua" || p.cat === activeCat);
+    if (query) {
+      list = list.filter(p => p.name.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query));
+    }
+    resultCount.textContent = `Menampilkan ${list.length} dari ${PRODUCTS.length} menu`;
+    if (list.length === 0) {
+      grid.innerHTML = "";
+      emptyState.style.display = "block";
+    } else {
+      emptyState.style.display = "none";
+      grid.innerHTML = list.map(productCardMarkup).join("");
+      initScrollReveal();
+    }
+  }
+
+  function resetFilters() {
+    activeCat = "semua";
+    searchInput.value = "";
+    renderFilters();
+    renderProducts();
+  }
+
+  searchInput.addEventListener("input", renderProducts);
+  renderFilters();
+  renderProducts();
+</script>
+</body>
+</html>

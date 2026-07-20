@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purimas 3 — Toko Kue &amp; Bolu Rumahan</title>
+<meta name="description" content="Purimas 3, toko kue rumahan dengan 30 pilihan menu: kue basah, bolu, kue ulang tahun, cookies, donat, hingga pastry. Pesan online, antar ke rumah.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">Purimas 3 <small>Toko Kue</small></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="produk.html">Semua Produk</a>
+      <a href="promo.html">Promo</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="produk.html" class="nav-cta">Pesan Sekarang</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Toko Kue Rumahan Sejak 2016</span>
+      <h1>Kue rumahan rasa <em>istimewa</em>, untuk setiap momen keluarga.</h1>
+      <p class="lead">Purimas 3 menghadirkan 30 pilihan kue basah, bolu, kue ulang tahun, cookies, donat, hingga pastry — dibuat segar setiap hari dari dapur Sukabumi kami.</p>
+      <div class="hero-actions">
+        <a href="produk.html" class="btn btn-primary">Lihat Semua Menu</a>
+        <a href="kontak.html" class="btn btn-outline">Pesan Kue Custom</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>30+</strong><span>Pilihan Menu</span></div>
+        <div><strong>8 Thn</strong><span>Melayani Pelanggan</span></div>
+        <div><strong>4.8/5</strong><span>Rating Pelanggan</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg class="cake-illustration" viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
+        <ellipse class="layer" cx="150" cy="290" rx="120" ry="16" fill="var(--brown-mid)" opacity="0.25"/>
+        <rect class="layer" x="55" y="210" width="190" height="66" rx="14" fill="var(--blue-deep)"/>
+        <rect class="layer" x="55" y="210" width="190" height="14" fill="var(--blue-soft)"/>
+        <rect class="layer" x="75" y="140" width="150" height="66" rx="14" fill="var(--gold)"/>
+        <rect class="layer" x="75" y="140" width="150" height="14" fill="var(--gold-pale)"/>
+        <rect class="layer" x="98" y="76" width="104" height="60" rx="14" fill="var(--brown-mid)"/>
+        <rect class="layer" x="98" y="76" width="104" height="12" fill="var(--brown-soft)"/>
+        <rect class="layer" x="146" y="42" width="8" height="34" fill="var(--brown-dark)"/>
+        <path class="layer" d="M150 20 Q157 30 150 40 Q143 30 150 20 Z" fill="var(--gold-deep)"/>
+        <circle class="layer" cx="120" cy="170" r="5" fill="var(--brown-dark)"/>
+        <circle class="layer" cx="150" cy="175" r="5" fill="var(--brown-dark)"/>
+        <circle class="layer" cx="180" cy="170" r="5" fill="var(--brown-dark)"/>
+        <circle class="layer" cx="100" cy="240" r="5" fill="var(--gold-pale)"/>
+        <circle class="layer" cx="150" cy="245" r="5" fill="var(--gold-pale)"/>
+        <circle class="layer" cx="200" cy="240" r="5" fill="var(--gold-pale)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="lapis-divider"></div>
+
+<!-- KATEGORI -->
+<section class="bg-cream-soft">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Kategori</span>
+        <h2>Pilih kue sesuai suasana hatimu</h2>
+      </div>
+      <p>Dari camilan sore yang sederhana sampai kue ulang tahun penuh dekorasi — semua ada di satu tempat.</p>
+    </div>
+    <div class="category-grid" id="categoryGrid"></div>
+  </div>
+</section>
+
+<!-- PRODUK FAVORIT -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Favorit Pelanggan</span>
+        <h2>Menu yang paling sering dipesan</h2>
+      </div>
+      <a href="produk.html" class="btn btn-outline btn-small">Lihat Semua Produk</a>
+    </div>
+    <div class="product-grid" id="favoriteGrid"></div>
+  </div>
+</section>
+
+<div class="lapis-strip"></div>
+
+<!-- PROMO BANNER -->
+<section class="bg-blue">
+  <div class="container grid-2">
+    <div>
+      <span class="eyebrow" style="color:var(--gold-pale)">Jangan Sampai Terlewat</span>
+      <h2>Promo spesial minggu ini menanti kamu.</h2>
+      <p style="color:var(--blue-soft);max-width:48ch;">Diskon hingga 20% untuk kue ulang tahun pilihan, dan gratis ongkir untuk pemesanan di atas Rp150.000 area Sukabumi.</p>
+      <a href="promo.html" class="btn btn-primary">Lihat Semua Promo</a>
+    </div>
+    <div class="info-card" style="background:rgba(255,253,247,0.06);border:1.5px dashed var(--gold-pale);box-shadow:none;">
+      <p class="eyebrow" style="color:var(--gold-pale)">Kode Kupon</p>
+      <div class="promo-code" style="background:rgba(255,253,247,0.1);color:var(--cream);border-color:var(--gold-pale);">
+        <span>PURIMAS20</span>
+        <button onclick="navigator.clipboard.writeText('PURIMAS20'); showToast('Kode promo disalin!')">Salin</button>
+      </div>
+      <p style="color:var(--blue-soft);font-size:.85rem;margin-top:12px;">Berlaku untuk kategori Kue Ulang Tahun, minimal transaksi Rp150.000.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KENAPA PILIH KAMI -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Kenapa Purimas 3</span>
+        <h2>Dibuat segar, diantar dengan hati-hati</h2>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="info-card reveal">
+        <h3>Selalu Fresh Harian</h3>
+        <p style="color:var(--brown-mid);font-size:.94rem;">Semua kue dipanggang dan dikukus setiap hari, tanpa bahan pengawet, langsung dari dapur kami.</p>
+      </div>
+      <div class="info-card reveal">
+        <h3>Custom Sesuai Acara</h3>
+        <p style="color:var(--brown-mid);font-size:.94rem;">Kue ulang tahun dan hampers dapat disesuaikan warna, rasa, hingga tulisan ucapan.</p>
+      </div>
+      <div class="info-card reveal">
+        <h3>Kemasan Rapi &amp; Aman</h3>
+        <p style="color:var(--brown-mid);font-size:.94rem;">Dikemas dengan box kokoh agar kue sampai ke tangan kamu dalam kondisi terbaik.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="bg-cream-soft">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Testimoni</span>
+        <h2>Kata mereka tentang Purimas 3</h2>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p style="margin-top:10px;">Bolu pandan kejunya juara, keju nya banyak dan lembut banget. Langganan tiap minggu!</p>
+        <div class="testi-name">Rina Amelia</div>
+        <div class="testi-role">Sukabumi Kota</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p style="margin-top:10px;">Pesan kue ulang tahun custom karakter untuk anak saya, hasilnya rapi dan sesuai request. Terima kasih Purimas 3!</p>
+        <div class="testi-name">Bagus Prakoso</div>
+        <div class="testi-role">Cibadak</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p style="margin-top:10px;">Nastarnya selalu jadi andalan lebaran keluarga besar kami. Lumer dan selai nanasnya berasa.</p>
+        <div class="testi-name">Siti Nurhaliza</div>
+        <div class="testi-role">Cisaat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container text-center">
+    <span class="eyebrow" style="justify-content:center;">Siap Memesan?</span>
+    <h2>Rayakan momen spesialmu bersama kue Purimas 3</h2>
+    <p style="max-width:52ch;margin:0 auto 26px;color:var(--brown-mid);">Konsultasikan kebutuhan kue untuk acaramu, tim kami siap membantu memilih menu yang paling pas.</p>
+    <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Purimas 3</div>
+        <p style="font-size:.9rem;opacity:.85;max-width:32ch;">Toko kue rumahan di Sukabumi — menghadirkan kue basah, bolu, dan kue ulang tahun segar setiap hari.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram Purimas 3">IG</a>
+          <a href="#" aria-label="Facebook Purimas 3">FB</a>
+          <a href="#" aria-label="TikTok Purimas 3">TT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="produk.html">Semua Produk</a></li>
+          <li><a href="promo.html">Promo</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="produk.html?kategori=kue-basah">Kue Basah</a></li>
+          <li><a href="produk.html?kategori=bolu">Bolu</a></li>
+          <li><a href="produk.html?kategori=ulang-tahun">Kue Ulang Tahun</a></li>
+          <li><a href="produk.html?kategori=cookies">Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li>Jl. Purimas Raya No. 3, Sukabumi</li>
+          <li>+62 812-3456-7890</li>
+          <li>halo@purimas3.id</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Purimas 3. Semua hak cipta dilindungi.</span>
+      <span>Dibuat dengan cinta di Sukabumi 🍰</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("categoryGrid").innerHTML = Object.keys(CATEGORY_META).map(categoryCardMarkup).join("");
+  const favorites = PRODUCTS.filter(p => p.badge === "Best Seller").slice(0, 8);
+  document.getElementById("favoriteGrid").innerHTML = favorites.map(productCardMarkup).join("");
+</script>
+</body>
+</html>
