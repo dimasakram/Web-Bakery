@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://purimas3.id/sitemap.xml
