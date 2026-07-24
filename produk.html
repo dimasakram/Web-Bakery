@@ -74,8 +74,6 @@
 
     <div class="filter-bar" id="filterBar"></div>
 
-    <p class="result-count" id="resultCount"></p>
-
     <div class="product-grid" id="productGrid"></div>
 
     <div class="empty-state" id="emptyState" style="display:none;">
@@ -204,8 +202,6 @@
     if (query) {
       list = list.filter(p => p.name.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query));
     }
-    list = sortProducts(list);
-    resultCount.textContent = `Menampilkan ${list.length} dari ${PRODUCTS.length} menu`;
     if (list.length === 0) {
       grid.innerHTML = "";
       emptyState.style.display = "block";
